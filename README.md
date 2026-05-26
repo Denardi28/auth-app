@@ -39,10 +39,10 @@ Execute os comandos abaixo, um por um, dentro do seu terminal de preferência:
 
 ```bash
 # 1. Clone o repositório para a sua máquina
-git clone URL_DO_SEU_REPOSITORIO_AQUI
+git clone [https://github.com/Denardi28/auth-app](https://github.com/Denardi28/auth-app)
 
 # 2. Acesse a pasta do projeto que foi criada
-cd NOME_DA_SUA_PASTA_DO_PROJETO
+cd auth-app
 
 # 3. Instale as dependências de pacotes do PHP/Laravel
 composer install
