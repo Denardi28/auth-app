@@ -1,59 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Laravel Blade Posts Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Um sistema de gerenciamento de publicações robusto e dinâmico construído com **Laravel**, **Blade** e **Tailwind CSS**. O projeto foi desenvolvido com foco em boas práticas de arquitetura MVC, oferecendo uma experiência de usuário fluida para criação, leitura, edição e exclusão de conteúdos (CRUD), além de um sistema inteligente de filtragem por categorias e tratamento avançado de mídia.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🛠️ Tecnologias Utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* **Backend:** Laravel 11 (PHP 8.2+)
+* **Frontend:** Blade Templates & Tailwind CSS
+* **Banco de Dados:** SQLite / MySQL
+* **Autenticação & UI:** Componentes nativos do ecossistema Laravel Breeze
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Funcionalidades Principais
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* **CRUD Completo de Posts:** Criação, listagem, edição e exclusão de publicações em tempo real.
+* **Filtro por Categorias:** Mecanismo de busca refinada direto na listagem principal (`index`), atualizando os resultados dinamicamente via requisições `GET`.
+* **Upload Inteligente de Imagens:** Suporte a arquivos de mídia com sistema de *preview* dinâmico.
+* **Renderização de Mídia Inteligente:** Algoritmo CSS/Tailwind adaptado para exibir imagens horizontais ou verticais em proporção real (`object-contain`), eliminando cortes indesejados ou distorções no layout.
+* **Gerenciamento de Disco Rigoroso:** O controlador remove fisicamente imagens antigas do diretório `Storage` ao atualizar ou deletar um post, evitando o acúmulo de arquivos órfãos no servidor.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🚀 Guia de Instalação e Execução (Tudo Junto)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Siga a sequência de comandos abaixo no terminal do seu computador para clonar, configurar e colocar a aplicação para rodar imediatamente.
 
-### Premium Partners
+### 📋 Pré-requisitos
+Antes de começar, certifique-se de que tem instalado na sua máquina:
+* **Git** (Para clonar o projeto)
+* **PHP (>= 8.2)** e **Composer**
+* **Node.js & NPM**
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 💻 Passo a Passo Sequencial no Terminal
 
-## Contributing
+Execute os comandos abaixo, um por um, dentro do seu terminal de preferência:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# 1. Clone o repositório para a sua máquina
+git clone URL_DO_SEU_REPOSITORIO_AQUI
 
-## Code of Conduct
+# 2. Acesse a pasta do projeto que foi criada
+cd NOME_DA_SUA_PASTA_DO_PROJETO
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 3. Instale as dependências de pacotes do PHP/Laravel
+composer install
 
-## Security Vulnerabilities
+# 4. Instale as dependências do Frontend (Tailwind CSS, Vite, etc.)
+npm install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 5. Crie o arquivo de configuração do ambiente (.env)
+cp .env.example .env
 
-## License
+# 6. Gere a chave única de segurança do Laravel
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 7. Crie o banco de dados, rode as migrations e adicione as categorias padrão (Seeders)
+php artisan migrate --seed
+
+# 8. Crie o link do Storage (Passo obrigatório para que as imagens fiquem visíveis na tela)
+php artisan storage:link
+
+# 9. Inicialize o compilador do Tailwind CSS (Deixe este terminal aberto rodando)
+npm run dev
+
+# 10. Ligue o servidor local do PHP/Laravel
+php artisan serve
