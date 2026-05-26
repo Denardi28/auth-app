@@ -23,7 +23,7 @@ Um sistema de gerenciamento de publicações robusto e dinâmico construído com
 
 ---
 
-## 🚀 Guia de Instalação e Execução (Tudo Junto)
+## 🚀 Guia de Instalação e Execução (Ambiente Windows)
 
 Siga a sequência de comandos abaixo no terminal do seu computador para clonar, configurar e colocar a aplicação para rodar imediatamente.
 
@@ -39,7 +39,7 @@ Execute os comandos abaixo, um por um, dentro do seu terminal de preferência:
 
 ```bash
 # 1. Clone o repositório para a sua máquina
-git clone https://github.com/Denardi28/auth-app
+git clone [https://github.com/Denardi28/auth-app](https://github.com/Denardi28/auth-app)
 
 # 2. Acesse a pasta do projeto que foi criada
 cd auth-app
@@ -51,19 +51,22 @@ composer install
 npm install
 
 # 5. Crie o arquivo de configuração do ambiente (.env)
-cp .env.example .env
+copy .env.example .env
 
 # 6. Gere a chave única de segurança do Laravel
 php artisan key:generate
 
-# 7. Crie o banco de dados, rode as migrations e adicione as categorias padrão (Seeders)
+# 7. Crie o arquivo de banco de dados SQLite 100% vazio e compatível
+copy NUL database\database.sqlite
+
+# 8. Rode as migrations e adicione as categorias padrão (Seeders)
 php artisan migrate --seed
 
-# 8. Crie o link do Storage (Passo obrigatório para que as imagens fiquem visíveis na tela)
+# 9. Crie o link do Storage (Passo obrigatório para que as imagens fiquem visíveis na tela)
 php artisan storage:link
 
-# 9. Inicialize o compilador do Tailwind CSS (Deixe este terminal aberto rodando)
+# 10. Inicialize o compilador do Tailwind CSS (Deixe este terminal aberto rodando)
 npm run dev
 
-# 10. Ligue o servidor local do PHP/Laravel
+# 11. Ligue o servidor local do PHP/Laravel
 php artisan serve
