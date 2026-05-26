@@ -53,19 +53,25 @@ npm install
 # 5. Crie o arquivo de configuração do ambiente (.env)
 copy .env.example .env
 
-# 6. Gere a chave única de segurança do Laravel
+# 6. Ajustando as Configurações do Banco de Dados (.env)
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=auth-app
+DB_USERNAME=root
+DB_PASSWORD=
+
+# 7. Gere a chave única de segurança do Laravel
 php artisan key:generate
 
-# 7. Crie o arquivo de banco de dados SQLite 100% vazio e compatível
-copy NUL database\database.sqlite
-
-# 8. Rode as migrations e adicione as categorias padrão (Seeders)
+# 8. Rode as migrations e adicione as categorias padrão (Seeders) no MySQL
 php artisan migrate --seed
 
 # 9. Crie o link do Storage (Passo obrigatório para que as imagens fiquem visíveis na tela)
 php artisan storage:link
 
-# 10. Inicialize o compilador do Tailwind CSS 
+# 10. Inicialize o compilador do Tailwind CSS (Deixe este terminal aberto rodando)
 npm run build
 
 # 11. Ligue o servidor local do PHP/Laravel
