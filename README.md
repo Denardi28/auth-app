@@ -65,8 +65,8 @@ php artisan migrate --seed
 # 9. Crie o link do Storage (Passo obrigatório para que as imagens fiquem visíveis na tela)
 php artisan storage:link
 
-# 10. Inicialize o compilador do Tailwind CSS (Deixe este terminal aberto rodando)
-npm run dev
+# 10. Inicialize o compilador do Tailwind CSS 
+npm run build
 
 # 11. Ligue o servidor local do PHP/Laravel
 php artisan serve
